@@ -48,11 +48,12 @@ export function Heatmap({ txns }: Props) {
       <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
         <h3 className="font-semibold text-gray-700 mb-4">Daily Spending Heatmap · Jan–Apr 2026</h3>
 
-        <div className="flex gap-1 mb-1">
+        <div className="overflow-x-auto">
+        <div className="flex gap-1 mb-1 min-w-max">
           {DAYS.map(d => <div key={d} className="w-8 text-center text-xs text-gray-400">{d}</div>)}
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1 min-w-max">
           {weeks.map((week, wi) => (
             <div key={wi} className="flex gap-1">
               {Array(7).fill(null).map((_, di) => {
@@ -75,6 +76,7 @@ export function Heatmap({ txns }: Props) {
             </div>
           ))}
         </div>
+        </div>{/* end overflow-x-auto */}
 
         <div className="flex items-center gap-2 mt-4">
           <span className="text-xs text-gray-400">Less</span>

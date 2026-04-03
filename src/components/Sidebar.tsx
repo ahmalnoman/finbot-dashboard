@@ -15,7 +15,7 @@ const LINKS: { id: Page; label: string; icon: string }[] = [
 
 export function Sidebar({ active, onNav }: Props) {
   return (
-    <aside className="w-56 min-h-screen flex-shrink-0 flex flex-col" style={{ background: '#1A6B4A' }}>
+    <aside className="hidden md:flex w-56 min-h-screen flex-shrink-0 flex-col" style={{ background: '#1A6B4A' }}>
       <div className="px-6 py-5 border-b border-white/10">
         <div className="text-white font-bold text-xl tracking-tight">💰 FinBot</div>
         <div className="text-white/50 text-xs mt-0.5">Finance Dashboard</div>

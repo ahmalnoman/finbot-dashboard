@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ALL_TXN } from './data/mock'
 import { Sidebar, Page } from './components/Sidebar'
+import { BottomNav } from './components/BottomNav'
 import { Overview }     from './pages/Overview'
 import { Transactions } from './pages/Transactions'
 import { Categories }   from './pages/Categories'
@@ -21,7 +22,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen">
       <Sidebar active={page} onNav={setPage} />
-      <main className="flex-1 p-6 overflow-auto">
+      <main className="flex-1 p-4 md:p-6 pb-20 md:pb-6 overflow-auto">
         <h1 className="text-xl font-bold text-gray-800 mb-5">{PAGE_TITLES[page]}</h1>
         {page === 'overview'     && <Overview     txns={ALL_TXN} />}
         {page === 'transactions' && <Transactions txns={ALL_TXN} />}
@@ -29,6 +30,7 @@ export default function App() {
         {page === 'trends'       && <Trends       txns={ALL_TXN} />}
         {page === 'heatmap'      && <Heatmap      txns={ALL_TXN} />}
       </main>
+      <BottomNav active={page} onNav={setPage} />
     </div>
   )
 }
